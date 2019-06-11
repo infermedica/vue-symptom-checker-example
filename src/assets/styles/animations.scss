@@ -1,0 +1,55 @@
+.flow-in-enter,
+.flow-out-leave-to {
+  opacity: 0;
+  transform: translateX(5rem);
+}
+
+.flow-in-leave-to,
+.flow-out-enter {
+  opacity: 0;
+  transform: translateX(-5rem);
+}
+
+.flow-in-leave,
+.flow-in-enter-to,
+.flow-out-leave,
+.flow-out-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.flow-in-enter-active,
+.flow-in-leave-active,
+.flow-out-enter-active,
+.flow-out-leave-active {
+  transition: opacity 0.2s, transform 0.25s ease-out;
+  will-change: transform;
+}
+
+.flow-up-enter,
+.flow-up-leave-to {
+  opacity: 0;
+  transform: translateY(5rem);
+}
+
+.flow-up-leave,
+.flow-up-enter-to,
+.slide-leave,
+.slide-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flow-up-enter-active,
+.flow-up-leave-active,
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 0.3s, transform 0.4s ease-out;
+  will-change: transform;
+}
+
+.slide-enter,
+.slide-leave-to {
+  opacity: 0;
+  transform: translateY(-5rem);
+}

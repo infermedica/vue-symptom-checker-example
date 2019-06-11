@@ -1,0 +1,103 @@
+@import './animations.scss';
+
+*,
+* ::before,
+* ::after {
+  box-sizing: border-box;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+a:visited {
+  color: $dull-blue;
+}
+
+.fa-icon {
+  display: flex;
+  flex: 0 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: text-bottom;
+}
+
+.step {
+  &__center {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+  }
+
+  &__subtitle {
+    align-self: center;
+    margin: 25px 15px 25px 15px;
+    font: $font-spacious 'Soleil', sans-serif;
+    color: $dull-blue;
+  }
+
+  &__caption {
+    align-self: center;
+    margin: 0 0 15px 0;
+    font-size: $font-grand;
+    color: $dull-blue;
+  }
+
+  &__widen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    width: 80%;
+  }
+
+  &__final {
+    width: 100%;
+  }
+}
+
+.question {
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: $font-grand;
+    color: $dark-blue;
+    text-align: center;
+  }
+}
+
+.main__button {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin: 15px 2px 15px auto;
+  font-size: $font-regular;
+  color: $main-blue;
+  cursor: pointer;
+  background: $blank;
+  border: 1px solid $main-blue;
+  border-radius: 4px;
+  transition: color 0.2s, background-color 0.2s, box-shadow 0.2s;
+
+  &:disabled {
+    color: $pale-grey;
+    cursor: not-allowed;
+    border-color: $pale-grey;
+    box-shadow: 0 0 0 transparent;
+  }
+
+  &:hover:not(:disabled) {
+    color: $dim-grey;
+    background-color: $dull-blue;
+    box-shadow: 0 0 10px $dull-blue;
+  }
+}
