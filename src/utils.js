@@ -14,12 +14,14 @@ export const arrayContains = (array, object) => {
 export const mapRiskFactors = (constFactors, riskFactors) => {
   return constFactors.map((factorId) => {
     const index = findIndex(riskFactors, factorId);
+    if (index < 0) return null;
+
     return {
       id: riskFactors[index].id,
       common_name: riskFactors[index].common_name,
       category: riskFactors[index].category
     };
-  });
+  }).filter((riskFactor) => !!riskFactor);
 };
 
 export const selectedEvidences = (evidencesGetter, evidences) => {
