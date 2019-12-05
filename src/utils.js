@@ -14,7 +14,7 @@ export const arrayContains = (array, object) => {
 export const mapRiskFactors = (constFactors, riskFactors) => {
   return constFactors.map((factorId) => {
     const index = findIndex(riskFactors, factorId);
-    if (index < 0) return;
+    if (index < 0) return null;
 
     return {
       id: riskFactors[index].id,
