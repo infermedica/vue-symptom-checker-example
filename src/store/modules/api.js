@@ -80,9 +80,9 @@ export default {
     },
 
     addRiskFactors({commit}, {riskFactors, data}) {
-      data
-        .filter((factor) => riskFactors.includes(factor.id))
-        .map((factor) => commit('PUSH_RISK_FACTOR', factor));
+      data.forEach((factor) => {
+        if (riskFactors.includes(factor.id)) commit('PUSH_RISK_FACTOR', factor);
+      });
     },
 
     selectRiskFactors({dispatch, getters}, riskFactors) {
