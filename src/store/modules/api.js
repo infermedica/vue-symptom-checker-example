@@ -81,7 +81,9 @@ export default {
 
     addRiskFactors({commit}, {riskFactors, data}) {
       data.forEach((factor) => {
-        if (riskFactors.includes(factor.id)) commit('PUSH_RISK_FACTOR', factor);
+        if (riskFactors.includes(factor.id)) {
+          commit('PUSH_RISK_FACTOR', factor);
+        }
       });
     },
 
