@@ -46,8 +46,7 @@ export default {
         return {
           id: evidence.id,
           choice_id: evidence.choice_id,
-          initial: evidence.initial,
-          related: evidence.related
+          source: evidence.source === 'initial' ? evidence.source : undefined
         };
       });
       return {
@@ -70,7 +69,7 @@ export default {
     },
 
     parsedSymptoms: (state, getters, rootState) => {
-      return rootState.patient.evidence.filter((evidence) => evidence.initial === true);
+      return rootState.patient.evidence.filter((evidence) => evidence.source === 'initial');
     }
   },
 
@@ -121,8 +120,7 @@ export default {
         } else if (selectedSuggestions.includes(suggestion.id) && evidenceId === -1) {
           commit('ADD_EVIDENCE', {
             id: suggestion.id,
-            choice_id: 'present',
-            related: true
+            choice_id: 'present'
           });
         }
       });

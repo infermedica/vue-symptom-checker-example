@@ -2,7 +2,7 @@ import axios from 'axios';
 import VueCookies from 'vue-cookies';
 
 export default {
-  url: 'https://api.infermedica.com/v2',
+  url: 'https://api.infermedica.com/v3',
   headers() {
     return {
       'content-type': 'application/json',
@@ -18,10 +18,10 @@ export default {
       data
     });
   },
-  loadRiskFactors() {
+  loadRiskFactors(age) {
     return axios({
       method: 'get',
-      url: `${this.url}/risk_factors`,
+      url: `${this.url}/risk_factors?age.value=${age.value}`,
       headers: this.headers()
     });
   },

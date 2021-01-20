@@ -9,7 +9,7 @@
       </div>
       <div class="step-sexage__form">
         <label class="step-sexage--field">Age</label>
-        <BaseInput v-model.number="age" class="step-sexage__value"/>
+        <BaseInput v-model.number="age.value" class="step-sexage__value"/>
       </div>
     </div>
   </Step>

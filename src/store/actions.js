@@ -10,14 +10,16 @@ export default {
     try {
       commit('SET_LOADING', true);
       const res = await api.parse({
-        text: value
+        text: value,
+        age: rootState.patient.age,
+        sex: rootState.patient.sex
       });
       res.data.mentions.forEach((mention) => {
         const evidence = {
           id: mention.id,
           choice_id: mention.choice_id,
           common_name: mention.common_name,
-          initial: true
+          source: 'initial'
         };
         if (!arrayContains(rootState.patient.evidence, {id: mention.id})) {
           commit('ADD_EVIDENCE', evidence);
@@ -31,11 +33,11 @@ export default {
   },
 
   loadRiskFactors: async ({
-    commit, dispatch
+    rootState, commit, dispatch
   }) => {
     try {
       commit('SET_LOADING', true);
-      const res = await api.loadRiskFactors();
+      const res = await api.loadRiskFactors(rootState.patient.age);
       dispatch('addRiskFactors', {
         riskFactors: constants.defaultRiskFactors,
         data: res.data
@@ -52,14 +54,13 @@ export default {
   },
 
   suggest: async ({
-    rootState, getters, commit, dispatch
+    rootState, commit, dispatch
   }) => {
     try {
       commit('SET_LOADING', true);
       const res = await api.suggest({
         sex: rootState.patient.sex,
-        age: rootState.patient.age,
-        selected: getters.evidenceIds
+        age: rootState.patient.age
       });
       commit('SET_SUGGESTIONS', res.data);
       commit('SET_LOADING', false);
