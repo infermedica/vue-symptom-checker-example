@@ -60,7 +60,12 @@ export default {
       commit('SET_LOADING', true);
       const res = await api.suggest({
         sex: rootState.patient.sex,
-        age: rootState.patient.age
+        age: rootState.patient.age,
+        evidence: rootState.patient.evidence.map((evidenceRecord) => ({
+          id: evidenceRecord.id,
+          choice_id: evidenceRecord.choice_id,
+          source: evidenceRecord.source
+        }))
       });
       commit('SET_SUGGESTIONS', res.data);
       commit('SET_LOADING', false);
