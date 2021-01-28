@@ -2,7 +2,7 @@ export default {
 
   state: {
     sex: 'male',
-    age: 30,
+    age: {value: 30},
     evidence: []
   },
 
@@ -11,7 +11,7 @@ export default {
       state.sex = sex;
     },
     SET_AGE(state, age) {
-      state.age = age;
+      state.age = {value: age};
     },
     ADD_EVIDENCE(state, evidence) {
       state.evidence.push(evidence);

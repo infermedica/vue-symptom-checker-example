@@ -46,8 +46,7 @@ export default {
         return {
           id: evidence.id,
           choice_id: evidence.choice_id,
-          initial: evidence.initial,
-          related: evidence.related
+          source: evidence.source
         };
       });
       return {
@@ -70,7 +69,7 @@ export default {
     },
 
     parsedSymptoms: (state, getters, rootState) => {
-      return rootState.patient.evidence.filter((evidence) => evidence.initial === true);
+      return rootState.patient.evidence.filter((evidence) => evidence.source === 'initial');
     }
   },
 
@@ -122,7 +121,7 @@ export default {
           commit('ADD_EVIDENCE', {
             id: suggestion.id,
             choice_id: 'present',
-            related: true
+            source: 'suggest'
           });
         }
       });

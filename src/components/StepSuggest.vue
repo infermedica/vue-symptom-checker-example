@@ -34,6 +34,11 @@
     beforeCreate() {
       this.$store.dispatch('suggest');
     },
+    mounted() {
+      if (this.suggestions.length === 0) {
+        this.$store.dispatch('nextStep');
+      }
+    },
     components: {
       BaseCheckbox
     }
