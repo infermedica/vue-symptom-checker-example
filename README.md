@@ -6,9 +6,21 @@ App uses Infermedica API supported by Artificial Intelligence to perform symptom
 We created it to provide you with an insight on how to work with the Infermedica API, and how to implement such an appliaction on your own.
 Provided application resembles a primary care interview with a doctor and provides you with information about most likely conditions.
 
-The most recent Infermedica API documentation is always available on our [developer portal](https://developer.infermedica.com/docs/introduction).
+This example is a tutorial and is not intended to be a production-ready solution.
 
-Do not hesitate to contact us if you need any further [help](mailto:contact@infermedica.com).
+For more inspiration, best practices and examples, please go to [Infermedica API documentation](https://developer.infermedica.com/docs/introduction).
+
+## Applications based on Infermedica API
+
+Infermedica API enables you to develop a triage and prediagnosis application that resembles a basic interview with a doctor and provides you with information on the most probable symptoms and conditions.
+
+It uses Artificial Intelligence API provided by [Infermedica](https://infermedica.com) as an engine for symptom analysis.
+
+The most recent Infermedica API documentation is always available on our [Developer Portal](https://developer.infermedica.com/).
+
+Do not hesitate to [contact us](mailto:support@infermedica.com) if you need assistance.
+
+***Are you interested in this solution but lacking the developers' team who could ensure the highest quality of implementation process? Check out [Symptom Checker](https://infermedica.com/product/symptom-checker) developed by Infermedica and see how we can support you in its implementation. [Contact us](https://infermedica.com/contact)***
 
 ## Dependecies
 
@@ -23,6 +35,8 @@ Next steps assume that you have `node` and `npm` installed.
 
 First of all you have to obtain your own app-id and app-key from [developer portal](https://developer.infermedica.com/signup).
 You will need to paste these into right fields inside the application.
+
+⚠️  Please keep your API credentials in a secret place.
 
 ### Running app as docker image
 
