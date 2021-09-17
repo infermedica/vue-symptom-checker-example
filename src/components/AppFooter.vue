@@ -52,8 +52,10 @@
     }
 
     &__name {
-      padding: 5px 10px 3px 10px;
+      padding: 5px 20px 5px 20px;
       text-align: center;
+      font-size: 18px;
+      line-height: 40px;
     }
   }
 </style>

@@ -18,5 +18,10 @@ module.exports = {
       args[0].filename = 'index.html';
       return args;
     });
+  },
+  pluginOptions: {
+    webpackBundleAnalyzer: {
+      analyzerMode: 'disabled'
+    }
   }
 };

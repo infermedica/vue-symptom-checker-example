@@ -11,6 +11,7 @@
         <label class="step-sexage--field">Age</label>
         <BaseInput v-model.number="age.value" class="step-sexage__value"/>
       </div>
+      <p v-if="age.value < 0 || age.value > 130" class="age-validation">Please enter an age in the range 0-130.</p>
     </div>
   </Step>
 </template>
@@ -69,6 +70,11 @@
 
     &__value {
       margin: 25px 0;
+    }
+
+    .age-validation {
+      color: #cc2f2f;
+      display: block;
     }
   }
 </style>

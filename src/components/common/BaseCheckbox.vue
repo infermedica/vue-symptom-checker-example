@@ -2,8 +2,7 @@
   <label class="checkbox__label">
     {{ label }}
     <input :checked="value.includes(valueCheck) && selected === true"
-           type="checkbox" :value="valueCheck" class="checkbox__input"
-           @input="updateInput($event.target)"/>
+           :value="valueCheck" @input="updateInput($event.target)" type="checkbox" class="checkbox__input"/>
     <span class="checkbox__mark"></span>
   </label>
 </template>

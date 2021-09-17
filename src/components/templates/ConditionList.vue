@@ -3,8 +3,7 @@
     <div v-for="condition in conditions" :key="condition.id">
       <div class="condition-list__item">
         <h5 class="condition-list__header"> {{ condition.common_name }}&nbsp; </h5>
-        <div v-if="condition.probability > 0.2" class="condition-list--explain"
-             @click="explain(condition.id)">
+        <div v-if="condition.probability > 0.2" @click="explain(condition.id)" class="condition-list--explain">
           explain
           <Icon name="eye" class="icon__explain"/>
         </div>

@@ -2,8 +2,7 @@
   <label class="radio__label">
     {{ label }}
     <input :checked="checkValue === value || selected === true" :value="label"
-           type="radio" class="radio__input"
-           @input="$emit('input', checkValue)"/>
+           @input="$emit('input', checkValue)" type="radio" class="radio__input"/>
     <div class="radio__check"></div>
   </label>
 </template>
