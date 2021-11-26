@@ -6,16 +6,14 @@
       <div>
         <p>We will try to recognize your symptoms using Natural Language Processing algorithms.</p>
       </div>
-      <textarea placeholder="e.g. I've got headache" class="step-parse__area"
-                @input="suggest($event.target.value)">
+      <textarea @input="suggest($event.target.value)" placeholder="e.g. I've got headache" class="step-parse__area">
       </textarea>
       <div v-if="parsedSymptoms.length > 0" class="step-parse__identified">Identified symptoms:</div>
       <ul v-if="parsedSymptoms.length > 0" class="step-parse__list">
         <li v-for="symptom in parsedSymptoms" :key="symptom.id" class="step-parse__item">
           <Icon name="plus-square" class="step-parse__icon"/>
           &nbsp;{{ symptom.common_name }}
-          <button type="button" aria-label="Close" class="step-parse__remove"
-                  @click="removeParsedSymptom(symptom.id)">
+          <button @click="removeParsedSymptom(symptom.id)" type="button" aria-label="Close" class="step-parse__remove">
             <Icon name="times" scale="0.85"/>
           </button>
         </li>

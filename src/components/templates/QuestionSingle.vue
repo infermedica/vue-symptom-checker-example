@@ -3,12 +3,12 @@
     <h5 class="question__title">{{ question.text }}</h5>
     <div class="question-single__form">
       <button v-for="choice in question.items[0].choices" :key="choice.id"
-              class="btn mr-4"
               :class="{'question-single--yes': choice.id === 'present',
                        'question-single--no': choice.id === 'absent',
                        'question-single--unknown': choice.id === 'unknown',
                        'question-single--selected': choice.selected}"
-              @click="addEvidence(choice)">
+              @click="addEvidence(choice)"
+              class="btn mr-4">
         {{ choice.label }}
       </button>
     </div>

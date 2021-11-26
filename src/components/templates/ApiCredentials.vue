@@ -1,14 +1,13 @@
 <template>
   <div class="api__credentials">
-    <BaseInput v-model="appId" :is-error="validations.appId.error" label="App Id"
-               :disabled="!isCredentialEditable" :width="400" error="App Id is required to proceed"/>
-    <BaseInput v-model="appKey" label="App Key" :is-error="validations.appKey.error"
-               :disabled="!isCredentialEditable" :width="400" error="App Key is required to proceed"/>
-    <button v-if="!isCredentialEditable" class="api__edit"
-            @click="isCredentialEditable = !isCredentialEditable">
+    <BaseInput v-model="appId" :is-error="validations.appId.error"
+               :disabled="!isCredentialEditable" :width="400" label="App Id" error="App Id is required to proceed"/>
+    <BaseInput v-model="appKey" :is-error="validations.appKey.error"
+               :disabled="!isCredentialEditable" :width="400" label="App Key" error="App Key is required to proceed"/>
+    <button v-if="!isCredentialEditable" @click="isCredentialEditable = !isCredentialEditable" class="api__edit">
       Edit Credentials
     </button>
-    <button v-else class="api__save" @click="saveCredentials()">Save Credentials</button>
+    <button v-else @click="saveCredentials()" class="api__save">Save Credentials</button>
   </div>
 </template>
 

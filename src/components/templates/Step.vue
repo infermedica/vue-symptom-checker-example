@@ -5,17 +5,17 @@
     </div>
     <div class="step__footer">
       <transition name="fade">
-        <button v-if="index !== 0" class="step__back"
-                @click="previousAction()">
+        <button v-if="index !== 0" @click="previousAction()" class="step__back">
           Back
         </button>
       </transition>
       <button v-if="displayNextQuestion" :disabled="disableNext"
-              class="main__button" @click="diagnose">
+              @click="diagnose" class="main__button">
         Next question &gt;
       </button>
-      <button v-else-if="step !== 'StepDiagnosis'" :disabled="step === 'StepParse' && parsedSymptoms.length === 0"
-              :title="btnPopoverText" class="main__button" @click="$store.dispatch('nextStep')">
+      <button v-else-if="step !== 'StepDiagnosis'"
+              :disabled="step === 'StepParse' && parsedSymptoms.length === 0"
+              :title="btnPopoverText" @click="$store.dispatch('nextStep')" class="main__button">
         {{ nextStepText }} &gt;
       </button>
     </div>
@@ -125,12 +125,21 @@
       color: $light-grey;
       cursor: pointer;
       background: transparent;
-      border: 0;
+      border: 1px solid $main-blue;
       outline: 0;
       transition: color 0.2s ease;
+      padding: 10px 15px;
+      border-radius: 4px;
+      transition: color 0.2s, background-color 0.2s, box-shadow 0.2s;
 
       &:hover {
         color: $dull-blue;
+      }
+
+      &:hover:not(:disabled) {
+        color: $dim-grey;
+        background-color: $dull-blue;
+        box-shadow: 0 0 10px $dull-blue;
       }
     }
   }

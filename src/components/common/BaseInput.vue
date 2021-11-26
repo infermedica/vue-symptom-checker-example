@@ -1,8 +1,8 @@
 <template>
   <div :style="calculatedWidth" class="input__container">
-    <input required :disabled="disabled" :type="type" novaldiate
-           :value="value" :placeholder="placeholder" class="input__base"
-           @input="$emit('input', $event.target.value)"/>
+    <input :disabled="disabled" :type="type"
+           :value="value" :placeholder="placeholder" @input="$emit('input', $event.target.value)"
+           required novaldiate class="input__base"/>
     <label v-if="label" :class="disabled ? 'input__label--disabled': 'input__label'">{{ label }}</label>
     <span class="input__bar"></span>
     <transition>
